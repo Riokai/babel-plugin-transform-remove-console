@@ -16,6 +16,19 @@ console.error("bar");
 ```javascript
 ```
 
+**In**
+
+```javascript
+console.log("foo");
+console.error("bar");
+```
+
+**Out**
+
+```javascript
+console.error("bar"); // set options to ingore error
+```
+
 ## Installation
 
 ```sh
@@ -31,6 +44,27 @@ npm install babel-plugin-transform-remove-console
 ```json
 {
   "plugins": ["transform-remove-console"]
+}
+```
+
+or
+
+```json
+{
+  "plugins": [
+    ["transform-remove-console", {
+        "exclude": ["error"]
+    }]
+  ]
+}
+```
+
+### options
+`options` can be object.
+
+```javascript
+{
+  "exclude": ["error"]
 }
 ```
 
