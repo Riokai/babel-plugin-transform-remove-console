@@ -6,11 +6,36 @@ const unpad = require('../lib/unpad');
 
 function transform(code) {
   return babel.transform(code,  {
-    plugins: [plugin],
+    plugins: [
+      [plugin, {
+        exclude: ['error', 'info']
+      }]
+    ],
   }).code;
 }
 
 describe('remove-console-plugin', () => {
+  it('statement-nested-exclude-error-info', () => {
+    const source = unpad(`
+      function foo() {
+        console.error('foo');
+        console.info('bar');
+        console.log('list');
+        blah();
+      }
+    `);
+
+    const expected = unpad(`
+      function foo() {
+        console.error('foo');
+        console.info('bar');
+
+        blah();
+      }
+    `);
+    expect(transform(source)).toBe(expected);
+  });
+
   it('statement-nested', () => {
     const source = unpad(`
       function foo() {
