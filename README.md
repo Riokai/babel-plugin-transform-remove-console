@@ -26,7 +26,7 @@ console.error("bar");
 **Out**
 
 ```javascript
-console.error("bar"); // set options to ingore error
+console.error("bar"); // set options to ignore error
 ```
 
 ## Installation
