@@ -4,7 +4,7 @@ const isArray = require('../lib/isArray')
 
 module.exports = function() {
   return {
-    name: "transform-remove-console",
+    name: "transform-remove-console-enhance",
     visitor: {
       CallExpression(path, { opts }) {
         const calleePath = path.get("callee")
