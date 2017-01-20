@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-remove-console-enhance",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Remove all console.* calls.",
   "homepage": "https://github.com/babel/babili#readme",
   "repository": "https://github.com/Riokai/babel-plugin-transform-remove-console",
