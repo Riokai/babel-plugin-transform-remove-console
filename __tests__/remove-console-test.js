@@ -114,4 +114,30 @@ describe('remove-console-plugin', () => {
     `);
     expect(transform(source).trim()).toBe(expected);
   });
+
+  it('statement with remove--console-disable comments', () => {
+    const source = unpad(`
+      function foo() {
+        console.error('foo');
+        console.info('bar');
+        console.log('list');
+        // remove--console-disable
+        console.log('i should not remove');
+        blah();
+      }
+    `);
+
+    const expected = unpad(`
+      function foo() {
+        console.error('foo');
+        console.info('bar');
+
+        // remove--console-disable
+        console.log('i should not remove');
+        blah();
+      }
+    `);
+    expect(transform(source).trim()).toBe(expected);
+  });
+
 });

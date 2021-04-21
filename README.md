@@ -29,6 +29,23 @@ console.error("bar");
 console.error("bar"); // set options to ignore error
 ```
 
+**In**
+
+```javascript
+console.log("foo");
+// remove--console-disable
+console.log("i should not remove");
+console.error("bar");
+```
+
+**Out**
+
+```javascript
+// remove--console-disable
+console.log("i should not remove");
+console.error("bar"); // set options to ignore error
+```
+
 ## Installation
 
 ```sh

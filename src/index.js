@@ -16,7 +16,11 @@ module.exports = function() {
 
           if (hasTarget) return
         }
-
+        const leadingComments = path.parent.leadingComments || []
+        const removeConsoleDisable = leadingComments.find(item => item.value.trim()=== 'remove--console-disable' )
+        if(removeConsoleDisable) {
+          return
+        }
         if (calleePath.matchesPattern("console", true)) {
           path.remove()
         }
