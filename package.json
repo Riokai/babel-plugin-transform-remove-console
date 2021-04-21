@@ -1,11 +1,16 @@
 {
-  "name": "babel-plugin-transform-remove-console-enhance",
-  "version": "0.0.3",
+  "name": "babel-plugin-transform-remove-console-super-enhance",
+  "version": "0.0.4",
   "description": "Remove all console.* calls.",
   "homepage": "https://github.com/babel/babili#readme",
-  "repository": "https://github.com/Riokai/babel-plugin-transform-remove-console",
-  "bugs": "https://github.com/Riokai/babel-plugin-transform-remove-console/issues",
-  "author": "amasad, Kai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KuiShang/babel-plugin-transform-remove-console.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KuiShang/babel-plugin-transform-remove-console/issues"
+  },
+  "author": "kk",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
@@ -17,5 +22,8 @@
   "dependencies": {},
   "devDependencies": {
     "jest": "^18.1.0"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
